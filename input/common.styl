@@ -1,0 +1,364 @@
+@import 'reset.css'
+
+.container
+    @media (min-width: 1250px)
+        width 1230px
+
+.body-bgfa
+    background #fafafa
+
+body
+    &.active
+        .w100
+            transform translateX(0)
+
+        .public-layout
+            opacity 1
+            transition 0.3s opacity
+            transform translateX(0)
+
+        .moblie-toggle
+            span
+                background rgba(0, 0, 0, 0)
+
+                &:after
+                    top 0
+                    background #d51b51
+                    transition top 0.3s, bottom 0.3s, transform 0.3s 0.3s
+                    transform rotateZ(45deg)
+
+                &:before
+                    bottom 0
+                    background #d51b51
+                    transition top 0.3s, bottom 0.3s, transform 0.3s 0.3s
+                    transform rotateZ(-45deg)
+.public-layout
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 9
+    background rgba(0, 0, 0, 0.5)
+    opacity 0
+    transition 0.3s opacity, 0.3s transform 0.3s
+    transform translateX(100%)
+.header
+    position relative
+    background #000000
+    padding-top 38px
+    @media(max-width 767px)
+        padding-top 0
+    .w100
+        @media (max-width: 767px)
+            position fixed
+            top 0
+            right 0
+            bottom 0
+            z-index 10
+            max-width 300px
+            width 50%
+            background #fff
+            transition 0.3s 0.3s
+            transform translateX(100%)
+    .menu
+        @media (max-width: 767px)
+            float none
+
+        .item
+            box-sizing border-box
+            padding 0 15px
+            border-top 5px solid transparent
+            border-bottom 5px solid transparent
+            color #606060
+            font-size 14px
+            line-height 90px
+            transition 0.3s
+            @media (max-width: 767px)
+                display block
+                float none
+                margin 5px 0
+                border-bottom none
+                line-height 30px
+
+            &>a
+                display block
+
+            &:hover
+                border-bottom-color #d51b51
+                color #d51b51
+    .moblie-toggle
+        display none
+        width 60px
+        height 60px
+        text-align right
+        font-size 0
+        cursor pointer
+
+        i, span
+            display inline-block
+            vertical-align middle
+
+        span
+            position relative
+            width 60%
+            height 2px
+            background #fff
+            cursor pointer
+            transition 0.3s
+
+            &:before, &:after
+                position absolute
+                right 0
+                left 0
+                width 100%
+                height 2px
+                background #fff
+                content ''
+                transition 0.3s
+
+            &:after
+                top -20px
+                transition top 0.3s 0.3s, bottom 0.3s 0.3s, transform 0.3s
+
+                @media (max-width: 767px)
+                    top -13px
+
+            &:before
+                bottom -20px
+                transition top 0.3s 0.3s, bottom 0.3s 0.3s, transform 0.3s
+
+                @media (max-width: 767px)
+                    bottom -13px
+
+        i
+            width 0
+            height 100%
+    .brand
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        width 228px
+        height 95px
+        background url('') center center no-repeat
+        
+        @media(max-width 767px)
+            transform translate(0,0)
+            position static
+            display block
+            height 60px
+            width 200px
+            background-size auto 90%
+            background-position left center
+            float left
+    .top-nav-left
+    .top-nav-right
+        font-size 14px
+        color #ffffff
+        line-height 28px
+        a
+            padding 0 10px
+    .bottom-nav-left
+        font-size 16px
+        color #ffffff
+        line-height 26px
+        a
+            margin 0 10px
+        span
+            display block
+            text-align center
+            text-transform uppercase
+        span+span
+            padding-bottom 5px
+            font-size 12px
+            line-height 1
+            transform-origin center center
+            transform scale(0.8)
+    .bottom-nav-right
+        .search-box
+            background #d51b51
+            font-size 14px
+            color #ffffff
+            width 259px
+            height 38px
+            line-height 38px
+            margin-top 5px
+            input
+                width 80%
+                padding-left 10px
+                box-sizing border-box
+                border none
+                outline none
+                background none
+                &::placeholder
+                    color #ffffff
+                    font-family 'microsoft Yahei'
+            a
+                width 20%
+                height 100%
+                background url('../img/a5cd3d2d95ebe649b01dfbc4e4680e19-21+21.png') center center no-repeat
+                
+    .pt75
+        padding-top 75px
+.main-bannner
+    height 650px
+    @media(max-width 991px)
+        height 500px
+    @media(max-width 767px)
+        height 300px
+    .bg
+        height 100%
+        display block
+        background url('') center center no-repeat
+        background-size auto 100%
+        @media(max-width 767px)
+            background-position 30% center
+.main-child-menu
+    background #000000
+    font-size 0
+    text-align center
+    @media(max-width 767px)
+        display flex
+        overflow scroll
+        &::-webkit-scrollbar
+            display none
+    a
+        position relative
+        padding 0 80px
+        font-size 18px
+        color #c2c2c2
+        line-height 60px
+        display inline-block
+        transition 0.3s
+        @media(max-width 1200px)
+            padding 0 40px
+        @media(max-width 767px)
+            flex  0 0 auto
+        &:after
+            content ''
+            position absolute
+            top -7px
+            left 0
+            right 0
+            height 7px
+            transition 0.3s
+            background transparent
+        &:hover
+        &.active
+            background #d51b51
+            color #ffffff
+            &:after
+                background #d51b51
+.main-product-list
+    padding 10px 0
+    .left-item
+        display block
+        border-right 1px solid #dcdcdc
+        border-left 1px solid #dcdcdc
+        @media(max-width 1199px)
+            border-left none
+            border-right none
+
+        .pic
+            img
+                display block
+                width 100%
+
+        .text
+            padding 10px 0 15px
+            color #000000
+            text-align center
+            font-size 14px
+            line-height 24px
+
+    .right-item
+        height 338px
+        box-sizing border-box
+        margin-bottom 10px
+        display block
+        padding 40px 0 50px 230px
+        background url('') center center no-repeat
+        background-size cover
+        @media(max-width 991px)
+            height auto 
+            padding-top 0
+            padding-bottom 0
+            padding-left 0
+            background-size 0 0 
+            background-color #ffffff
+        .pic
+            img
+                display block
+                width 100%
+
+        .text
+            padding 10px 20px
+            background rgba(#fff, 0.59)
+            @media(max-width 991px)
+                background none
+
+        h3
+            padding-bottom 10px
+            color #d51b51
+            font-size 32px
+            line-height 42px
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+
+        h4
+            color #000000
+            font-size 22px
+            line-height 32px
+
+        p
+            padding-top 15px
+            color #515151
+            font-size 22px
+            line-height 32px
+
+        .tips
+            padding-top 30px
+            text-align center
+            font-size 0
+            @media(max-width 991px)
+                padding-top 0
+
+            span
+                display inline-block
+                width 100px
+                height 30px
+                border 1px solid #64367f
+                background #ffffff
+                color #64367f
+                text-align center
+                font-size 14px
+                line-height 30px
+                border-radius 3px
+                margin 0 9px
+                @media(max-width 991px)
+                    margin-bottom 10px
+
+.main-no-js-banner
+    width 100%
+    height 580px
+    background url('') center center no-repeat
+    background-size auto 100%
+    @media(max-width 991px)
+        height 400px
+    
+    @media(max-width 767px)
+        height 300px
+        
+
+.footer
+    padding 10px 0
+    background #2f2096
+    color #ffffff
+    text-align center
+    font-size 14px
+    line-height 24px
+
+    span
+        padding 0 5px
